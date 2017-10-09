@@ -3,7 +3,9 @@ Docker and GCE tasks
 
 ## Structure:
 `/monolith` - Legacy [reddit](https://github.com/Artemmkin/reddit) app monolith template for Docker
+
 `/comment`, `/post-py`, `/ui` - templates for [reddit](https://github.com/Artemmkin/reddit) app splitted to microservices
+
 `/scripts` - examples of initializing dockerized infrastructure
 
 # Docker infrastructure initialization

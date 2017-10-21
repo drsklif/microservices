@@ -1,5 +1,4 @@
 # Docker scripts
-================
 
 1. `init-docker-host.sh` Create docker host instance in GCE
 **Usage:** `sh ./init-docker-host.sh <your-project-id>`

@@ -9,7 +9,6 @@ Docker and GCE tasks
 `/scripts` - examples of initializing dockerized infrastructure
 
 # Docker infrastructure initialization
-======================================
 
 ## Prerequisites:
 1. Install [GCloud SDK](https://cloud.google.com/sdk/)
@@ -32,7 +31,6 @@ Docker and GCE tasks
 5. Profit
 
 # Misc
-======
 
 ## Useful docker commands:
 1. `docker build -t reddit:latest .` Build image with tag reddit:latest

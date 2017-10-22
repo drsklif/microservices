@@ -14,8 +14,8 @@ Docker and GCE tasks
 1. Install [GCloud SDK](https://cloud.google.com/sdk/)
 2. Configure GCloud with `gcloud init`
 3. Configure GCloud authentication: `gcloud auth application-default login`
-4. [Install Docker Machine](https://docs.docker.com/machine/install-machine/)
-5. [Install Docker Compose](https://docs.docker.com/compose/install/) if you choose appropriate method
+4. Install [Docker Machine](https://docs.docker.com/machine/install-machine/)
+5. Install [Docker Compose](https://docs.docker.com/compose/install/) if you choose appropriate method
 
 ## Manual initialization:
 1. Run `scripts/init-docker-host.sh` to create host for docker containers in GCE
@@ -43,12 +43,12 @@ Docker and GCE tasks
 
 ## Docker network commands:
 1. `docker network create` Create a network
-2. `connect` Connect a container to a network
-3. `disconnect`  Disconnect a container from a network
-4. `inspect` Display detailed information on one or more networks
-5. `ls` List networks
-6. `prune` Remove all unused networks
-7. `rm` Remove one or more networks
+2. `docker network connect` Connect a container to a network
+3. `docker network disconnect`  Disconnect a container from a network
+4. `docker network inspect` Display detailed information on one or more networks
+5. `docker network ls` List networks
+6. `docker network prune` Remove all unused networks
+7. `docker network rm` Remove one or more networks
 
 ## Useful docker-machine commands:
 1. `eval $(docker-machine env docker-host)` Set docker-machine environment
@@ -58,6 +58,6 @@ Docker and GCE tasks
 5. `docker-machine ssh` Log into or run a command on a machine with SSH.
 
 ## Useful docker-compose commands:
-1. `up` Create and start containers
-2. `ps` List containers
-3. `down` Stop and remove containers, networks, images, and volumes
+1. `docker-compose up` Create and start containers
+2. `docker-compose ps` List containers
+3. `docker-compose down` Stop and remove containers, networks, images, and volumes

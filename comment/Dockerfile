@@ -7,7 +7,7 @@ ADD Gemfile* $APP_HOME/
 
 RUN apk update && apk upgrade \
     && apk --no-cache add --virtual .build-deps \
-    && apk --update --no-cache add build-base \
+    && apk --update --no-cache add build-base tzdata \
     && bundle install \
     && gem cleanup \
     && rm -rf /usr/lib/ruby/gems/*/cache/* \

@@ -11,3 +11,7 @@
 3. `run-docker-instances.sh` Create network and volume and run docker containers
 
 **Usage:** `sh ./run-docker-instances.sh`
+
+4. `build-compose-images.sh` Build all necessary app images for compose deployment
+
+**Usage:** `sh ./build-compose-images.sh`

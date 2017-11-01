@@ -6,6 +6,8 @@ Docker and GCE tasks
 
 `/comment`, `/post-py`, `/ui` - templates for [reddit](https://github.com/Artemmkin/reddit) app splitted to microservices
 
+`/prometheus` - Prometheus monitoring app docker image
+
 `/scripts` - examples of initializing dockerized infrastructure
 
 # Docker infrastructure initialization
@@ -27,8 +29,10 @@ Docker and GCE tasks
 1. You need an instance for hosting docker containers in GCE. Use `scripts/init-docker-host.sh <your-project-id>` to create it or manually create VM instance with name `docker-host`
 2. Run `eval $(docker-machine env docker-host)` to init environment for docker-host instance
 3. Create `.env` file with all required environment variables. See `.env.example` for details
-4. Run `docker-compose up -d` to build images, create and start containers
-5. Profit
+4. Set `USER_NAME` environment variable  with you username
+5. Run `scripts/build-compose-images.sh` to build all necessary app images
+6. Run `docker-compose up -d` to build images, create and start containers
+7. Profit
 
 # Misc
 

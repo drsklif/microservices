@@ -7,6 +7,9 @@ else
     exit
 fi
 
+gcloud compute firewall-rules create prometheus-default --allow tcp:9090
+gcloud compute firewall-rules create puma-default --allow tcp:9292
+
 docker-machine create --driver google \
 --google-project $1 \
 --google-zone europe-west1-b \

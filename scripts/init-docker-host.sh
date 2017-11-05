@@ -7,12 +7,14 @@ else
     exit
 fi
 
-gcloud compute firewall-rules create prometheus-default --allow tcp:9090
-gcloud compute firewall-rules create puma-default --allow tcp:9292
-
 docker-machine create --driver google \
 --google-project $1 \
 --google-zone europe-west1-b \
---google-machine-type f1-micro \
+--google-machine-type n1-standard-1 \
 --google-machine-image $(gcloud compute images list --filter ubuntu-1604-lts --uri) \
+--google-open-port 80/tcp \
+--google-open-port 3000/tcp \
+--google-open-port 8080/tcp \
+--google-open-port 9090/tcp \
+--google-open-port 9292/tcp \
 docker-host

@@ -15,8 +15,17 @@ docker pull prom/prometheus:latest
 echo Pulling prometheus node-exporter image
 docker pull prom/node-exporter:v0.15.0
 
+echo Pulling alertmanager image
+docker pull prom/alertmanager
+
 echo Pulling percona-mongodb-exporter image for prometheus
 docker pull forekshub/percona-mongodb-exporter
+
+echo Pulling cadvisor latest image
+docker pull google/cadvisor:latest
+
+echo Pulling grafana image
+docker pull grafana/grafana
 
 echo Building post service image
 cd post-py && bash docker_build.sh

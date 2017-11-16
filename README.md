@@ -4,11 +4,15 @@ Docker and GCE tasks
 ## Structure:
 `/monolith` - Legacy [reddit](https://github.com/Artemmkin/reddit) app monolith template for Docker
 
-`/comment`, `/post-py`, `/ui` - templates for [reddit](https://github.com/Artemmkin/reddit) app splitted to microservices
+`/comment`, `/post-py`, `/ui` - Templates for [reddit](https://github.com/Artemmkin/reddit) app splitted to microservices
 
 `/prometheus` - Prometheus monitoring app docker image
 
-`/scripts` - examples of initializing dockerized infrastructure
+`/alertmanager` - Prometheus alertmanager app docker image
+
+`/scripts` - Examples of initializing dockerized infrastructure
+
+`/dashboards` - Grafana dashboards for monitoring infrastructure, services and business logic
 
 # Docker infrastructure initialization
 

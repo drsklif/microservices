@@ -27,3 +27,10 @@ docker-machine create --driver google \
 --google-machine-type g1-small \
 --google-machine-image $(gcloud compute images list --filter ubuntu-1604-lts --uri) \
 worker-2
+
+docker-machine create --driver google \
+--google-project $1 \
+--google-zone europe-west1-b \
+--google-machine-type g1-small \
+--google-machine-image $(gcloud compute images list --filter ubuntu-1604-lts --uri) \
+worker-3

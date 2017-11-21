@@ -6,6 +6,18 @@ RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 ADD Gemfile* $APP_HOME/
 
+# RUN apk --no-cache add --virtual .build-deps \
+#     build-base \
+#     ruby-dev \
+#     ruby-bundler \
+#   && bundle install \
+#   && gem cleanup \
+#   && rm -rf /usr/lib/ruby/gems/*/cache/* \
+#   && rm -rf /root/.bundle \
+#   \
+#   && apk del .build-deps
+
+#RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/' /etc/apk/repositories
 RUN apk update && apk upgrade \
     && apk --no-cache add --virtual .build-deps \
     && apk --update --no-cache add build-base \

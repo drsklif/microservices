@@ -38,6 +38,15 @@ Docker and GCE tasks
 6. Run `docker-compose up -d` to build images, create and start containers
 7. Profit
 
+## Initialize with docker-swarm orchestration and deployment:
+1. You need an instances for hosting docker containers in GCE. Use `scripts/init-docker-swarm.sh <your-project-id>` to create it
+2. Run `eval $(docker-machine env master-1)` to init environment for master-1 instance
+3. Create `.env` file with all required environment variables. See `.env.example` for details
+4. Set `USER_NAME` environment variable  with you username
+5. Run `scripts/build-compose-images.sh` to build all necessary app images
+6. Run `docker stack deploy --compose-file=<(docker-compose -f docker-compose.infra.yml -f docker-compose.yml config 2>/dev/null)  DEV` to build images, create and start containers
+7. Profit
+
 # Misc
 
 ## Useful docker commands:
@@ -69,3 +78,8 @@ Docker and GCE tasks
 1. `docker-compose up` Create and start containers
 2. `docker-compose ps` List containers
 3. `docker-compose down` Stop and remove containers, networks, images, and volumes
+
+## Useful docker stack commands:
+1. `docker stack deploy` deploy containers with docker-swarm
+2. `docker stack services` List services
+3. `docker stack rm` destroy containers

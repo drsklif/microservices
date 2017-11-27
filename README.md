@@ -14,6 +14,10 @@ Docker and GCE tasks
 
 `/dashboards` - Grafana dashboards for monitoring infrastructure, services and business logic
 
+`/kubernetes` - Files for reddit app kubernetes deployment
+
+`/kubernetes/kubernetes_the_hard_way` - Results of "Kubernetes the hard way" tutorial
+
 # Docker infrastructure initialization
 
 ## Prerequisites:

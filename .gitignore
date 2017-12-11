@@ -1,1 +1,10 @@
 build_info.txt
+
+# Terraform
+*.tfstate
+*.tfstate.*.backup
+*.tfstate.backup
+*.tfvars
+.terraform/
+*.retry
+*.pyc

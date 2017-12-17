@@ -13,6 +13,7 @@ test:
     - triggers
     - branches
 
+# - runs for all branches except master
 staging:
   stage: staging
   script:
@@ -27,8 +28,10 @@ staging:
     url: http://staging
   only:
     refs:
-      - master
+      - branches
     kubernetes: active
+  except:
+    - master
 
 production:
   stage: production
@@ -42,7 +45,6 @@ production:
   environment:
     name: production
     url: http://production
-  when: manual
   only:
     refs:
       - master

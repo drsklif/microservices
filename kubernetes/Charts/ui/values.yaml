@@ -5,7 +5,10 @@ service:
 
 image:
   repository: drsklif/ui
-  tag: 1.2
+  tag: 0.0.1
+
+ingress:
+  class: nginx
 
 postHost:
 postPort:

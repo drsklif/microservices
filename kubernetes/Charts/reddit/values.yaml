@@ -1,0 +1,20 @@
+comment:
+  image:
+    repository: drsklif/comment
+    tag: latest
+  service:
+    externalPort: 9292
+
+post:
+  image:
+    repository: drsklif/post
+    tag: latest
+    service:
+      externalPort: 5000
+
+ui:
+  image:
+    repository: drsklif/ui
+    tag: 1.2
+    service:
+      externalPort: 9292

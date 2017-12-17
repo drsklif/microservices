@@ -1,0 +1,13 @@
+---
+service:
+  internalPort: 9292
+  externalPort: 9292
+
+image:
+  repository: drsklif/ui
+  tag: 1.2
+
+postHost:
+postPort:
+commentHost:
+commentPort:

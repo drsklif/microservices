@@ -8,3 +8,4 @@ build_info.txt
 .terraform/
 *.retry
 *.pyc
+*.tgz

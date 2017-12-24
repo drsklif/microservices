@@ -13,7 +13,6 @@ test:
     - triggers
     - branches
 
-# - runs for all branches except master
 staging:
   stage: staging
   script:
@@ -31,7 +30,7 @@ staging:
       - branches
     kubernetes: active
   except:
-    - master
+    - triggers
 
 production:
   stage: production

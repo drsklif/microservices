@@ -5,6 +5,7 @@ stages:
   - test
   - review
   - release
+  - deploy_prod
   - cleanup
 
 build:
@@ -35,6 +36,15 @@ release:
   script:
     - setup_docker
     - release
+  only:
+    - master
+
+deploy_prod:
+  stage: deploy_prod
+  image: appropriate/curl
+  script:
+    - echo "Deploying to production!"
+    - "curl -X POST -F token=$CI_DEPLOY_PROD_TOKEN -F ref=master http://gitlab-gitlab/api/v4/projects/$CI_DEPLOY_PROJECT_ID/trigger/pipeline"
   only:
     - master
 

@@ -87,3 +87,7 @@ Docker and GCE tasks
 1. `docker stack deploy` deploy containers with docker-swarm
 2. `docker stack services` List services
 3. `docker stack rm` destroy containers
+
+## Tiller installation:
+1. `kubectl apply -f tiller.yml`
+2. `helm init --service-account tiller`

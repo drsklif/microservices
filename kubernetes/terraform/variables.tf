@@ -32,9 +32,14 @@ variable gke_legacy_abac {
   default     = false
 }
 
-variable gke_node_machine_type {
+variable gke_node_machine_type_small {
   description = "GCE machine type"
   default     = "g1-small"
+}
+
+variable gke_node_machine_type_big {
+  description = "GCE machine type"
+  default     = "n1-standard-1"
 }
 
 variable gke_node_image_type {
@@ -50,4 +55,14 @@ variable gke_node_disk_size {
 variable gke_dashboard_disabled {
   description = "kubernetes dashboard addon status"
   default     = false
+}
+
+variable gke_logging_service {
+  description = "type of logging service"
+  default     = "logging.googleapis.com"
+}
+
+variable gke_monitoring_service {
+  description = "type of monitoring service"
+  default     = "include monitoring.googleapis.com"
 }

@@ -47,6 +47,11 @@ variable gke_node_image_type {
   default     = "cos"
 }
 
+variable gke_node_count_big {
+  description = "Size of big pool of the cluster"
+  default     = 1
+}
+
 variable gke_node_disk_size {
   description = "disk size of each node"
   default     = 20

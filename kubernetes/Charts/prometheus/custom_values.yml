@@ -586,7 +586,27 @@ alertmanagerFiles:
 ## Prometheus server ConfigMap entries
 ##
 serverFiles:
-  alerts: {}
+  alerts:
+    groups:
+    - name: kube-apiservers.rules
+      rules:
+      - alert: K8SApiserverDown
+        expr: up{job="kubernetes-apiservers"} == 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          description: No API servers are reachable or all have disappeared from service discovery
+    - name: kube-nodes.rules
+      rules:
+      - alert: K8SNodeDown
+        expr: up{job="kubernetes-nodes"} == 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Node {{ $labels.instance }} is down"
+          description: "Node {{ $labels.instance }} is down more then 5 minutes"
   rules: {}
 
   prometheus.yml:

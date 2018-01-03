@@ -22,7 +22,7 @@ spec:
         component: ui
     spec:
       containers:
-      - image: drsklif/ui:1.2
+      - image: drsklif/ui
         name: ui
         env:
         - name: ENV

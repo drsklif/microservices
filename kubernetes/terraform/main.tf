@@ -1,23 +1,3 @@
-resource "google_container_node_pool" "big" {
-  name               = "big-pool"
-  zone               = "${google_container_cluster.primary.zone}"
-  cluster            = "${google_container_cluster.primary.name}"
-  node_count         = 1
-
-  node_config {
-    machine_type = "${var.gke_node_machine_type_big}"
-    image_type   = "${var.gke_node_image_type}"
-    disk_size_gb = "${var.gke_node_disk_size}"
-
-    oauth_scopes = [
-      "https://www.googleapis.com/auth/compute",
-      "https://www.googleapis.com/auth/devstorage.read_only",
-      "https://www.googleapis.com/auth/logging.write",
-      "https://www.googleapis.com/auth/monitoring",
-    ]
-  }
-}
-
 resource "google_container_cluster" "primary" {
   name               = "${var.gke_name}"
   zone               = "${var.gke_zone}"
@@ -66,4 +46,24 @@ resource "google_compute_firewall" "gke-allow" {
   }
 
   source_ranges = ["0.0.0.0/0"]
+}
+
+resource "google_container_node_pool" "big" {
+  name               = "big-pool"
+  zone               = "${google_container_cluster.primary.zone}"
+  cluster            = "${google_container_cluster.primary.name}"
+  node_count         = "${var.gke_node_count_big}"
+
+  node_config {
+    machine_type = "${var.gke_node_machine_type_big}"
+    image_type   = "${var.gke_node_image_type}"
+    disk_size_gb = "${var.gke_node_disk_size}"
+
+    oauth_scopes = [
+      "https://www.googleapis.com/auth/compute",
+      "https://www.googleapis.com/auth/devstorage.read_only",
+      "https://www.googleapis.com/auth/logging.write",
+      "https://www.googleapis.com/auth/monitoring",
+    ]
+  }
 }

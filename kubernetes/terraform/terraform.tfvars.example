@@ -1,1 +1,8 @@
-google_project = "PROJECT ID"
+google_project = "YOUR PROJECT ID"
+gke_node_machine_type_small = "g1-small"
+gke_node_machine_type_big = "n1-standard-2"
+gke_node_disk_size = 110
+gke_legacy_abac = true
+gke_dashboard_disabled = true
+gke_logging_service = "none"
+gke_monitoring_service = "none"

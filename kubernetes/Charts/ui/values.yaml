@@ -5,7 +5,7 @@ service:
 
 image:
   repository: drsklif/ui
-  tag: 0.0.1
+  tag: latest
 
 ingress:
   class: nginx
